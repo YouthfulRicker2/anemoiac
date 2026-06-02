@@ -5,13 +5,23 @@ import ReleaseCard from "../../components/ReleaseCard.astro";
 const releases = await getCollection("releases");
 ---
 <Layout>
-	<h1>Music</h1>
-	
-	{releases.map((release) => (
-		<ReleaseCard
-			title={release.data.title}
-			cover={release.data.cover}
-			url={`/music/${release.id}`}
-		/>
-	))}
+  <h1>Music</h1>
+  <div class="grid">
+    {releases.map((release) => (
+      <ReleaseCard
+        title={release.data.title}
+        cover={release.data.cover}
+        url={`/music/${release.id}`}
+      />
+    ))}
+  </div>
 </Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+</style>
