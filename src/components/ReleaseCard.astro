@@ -1,0 +1,8 @@
+---
+const { title, cover, url } = Astro.props;
+---
+
+<a href={url} class="card">
+	<img src={cover} alt={title} />
+	<h3>{title}</h3>
+</a>

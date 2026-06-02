@@ -1,0 +1,17 @@
+---
+import Layout from "../../components/Layout.astro";
+import { getCollection } from "astro:content";
+
+const { slug } = Astro.params;
+const releases = await getCollection("releases");
+
+const release = releases.find(r => r.slug === slug);
+---
+
+<Layout>
+	<h1>{release.data.title}</h1>
+	<img src={release.data.cover} />
+	<p>{release.body}</p>
+	<a href={release.data.spotify}>Spotify</a>
+	<a href={release.data.soundcloud}>SoundCloud</a>
+</Layout>
