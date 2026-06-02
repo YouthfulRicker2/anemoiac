@@ -28,16 +28,64 @@ const { Content } = await render(release);
       <p class="date">{release.data.date}</p>
       <div class="description"><Content /></div>
       <div class="links">
+		  {release.data.bandcamp && (
+			<a href={release.data.bandcamp} class="btn bandcamp" target="_blank">
+			  <img src="/icons/bandcamp.svg" alt="Bandcamp" class="icon" />
+			  <span>Listen on Bandcamp</span>
+			</a>
+		  )}
 		  {release.data.spotify && (
-			<a href={release.data.spotify} class="btn spotify">
+			<a href={release.data.spotify} class="btn spotify" target="_blank">
 			  <img src="/icons/spotify.svg" alt="Spotify" class="icon" />
 			  <span>Listen on Spotify</span>
 			</a>
 		  )}
+		  {release.data["apple-music"] && (
+			<a href={release.data["apple-music"]} class="btn apple-music" target="_blank">
+			  <img src="/icons/apple-music.svg" alt="Apple Music" class="icon" />
+			  <span>Listen on Apple Music</span>
+			</a>
+		  )}
+		  {release.data["youtube-music"] && (
+			<a href={release.data["youtube-music"]} class="btn youtube-music" target="_blank">
+			  <img src="/icons/youtube-music.svg" alt="YouTube Music" class="icon" />
+			  <span>Listen on YouTube Music</span>
+			</a>
+		  )}
 		  {release.data.soundcloud && (
-			<a href={release.data.soundcloud} class="btn soundcloud">
+			<a href={release.data.soundcloud} class="btn soundcloud" target="_blank">
 			  <img src="/icons/soundcloud.svg" alt="SoundCloud" class="icon" />
 			  <span>Listen on SoundCloud</span>
+			</a>
+		  )}
+		  {release.data.tidal && (
+			<a href={release.data.tidal} class="btn tidal" target="_blank">
+			  <img src="/icons/tidal.svg" alt="Tidal" class="icon" />
+			  <span>Listen on Tidal</span>
+			</a>
+		  )}
+		  {release.data["amazon-music"] && (
+			<a href={release.data["amazon-music"]} class="btn amazon-music" target="_blank">
+			  <img src="/icons/amazon.svg" alt="Amazon Music" class="icon" />
+			  <span>Listen on Amazon Music</span>
+			</a>
+		  )}
+		  {release.data.deezer && (
+			<a href={release.data.deezer} class="btn deezer" target="_blank">
+			  <img src="/icons/deezer.svg" alt="Deezer" class="icon" />
+			  <span>Listen on Deezer</span>
+			</a>
+		  )}
+		  {release.data.qobuz && (
+			<a href={release.data.qobuz} class="btn qobuz" target="_blank">
+			  <img src="/icons/qobuz.svg" alt="Qobuz" class="icon" />
+			  <span>Listen on Qobuz</span>
+			</a>
+		  )}
+		  {release.data.anghami && (
+			<a href={release.data.anghami} class="btn anghami" target="_blank">
+			  <img src="/icons/anghami.svg" alt="Anghami" class="icon" />
+			  <span>Listen on Anghami</span>
 			</a>
 		  )}
 		</div>
@@ -111,6 +159,14 @@ const { Content } = await render(release);
     width: 100%;
     max-width: 400px;
   }
+  .links {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 12px;
+	  margin-top: 16px;
+	  width: 100%;
+	  max-width: 400px;
+	}
   .btn {
     display: flex;
     align-items: center;
@@ -121,20 +177,33 @@ const { Content } = await render(release);
     font-size: 15px;
     font-weight: 600;
     transition: transform 0.15s, opacity 0.15s;
+    background: #0f0f0f;
+    border: 1px solid;
   }
-  .btn:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-  }
-  .icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-  .spotify { background: #0f0f0f; color: #1DB954; border: 1px solid #1DB954; }
-  .spotify .icon { filter: invert(58%) sepia(69%) saturate(456%) hue-rotate(95deg) brightness(96%) contrast(88%); }
-  .soundcloud { background: #0f0f0f; color: #ff5500; border: 1px solid #ff5500; }
-  .soundcloud .icon { filter: invert(45%) sepia(98%) saturate(1200%) hue-rotate(1deg) brightness(103%) contrast(104%); }
+  .btn:hover { transform: scale(1.02); opacity: 0.9; }
+  .icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+  .spotify       { color: #1DB954; border-color: #1DB954; }
+  .apple-music   { color: #fc3c44; border-color: #fc3c44; }
+  .youtube-music { color: #FF0000; border-color: #FF0000; }
+  .soundcloud    { color: #ff5500; border-color: #ff5500; }
+  .bandcamp      { color: #1da0c3; border-color: #1da0c3; }
+  .tidal         { color: #ffffff; border-color: #ffffff; }
+  .deezer        { color: #A238FF; border-color: #A238FF; }
+  .qobuz         { color: #00B4D8; border-color: #00B4D8; }
+  .anghami       { color: #945CFF; border-color: #945CFF; }
+  .amazon-music  { color: #48A3C6; border-color: #48A3C6; }
+  
+  .icon { width: 24px; height: 24px; flex-shrink: 0; filter: brightness(0) invert(1); }
+
+  .spotify       .icon { filter: invert(58%) sepia(69%) saturate(456%) hue-rotate(95deg) brightness(96%) contrast(88%); }
+  .apple-music   .icon { filter: invert(35%) sepia(90%) saturate(800%) hue-rotate(330deg) brightness(110%) contrast(95%); }
+  .youtube-music .icon { filter: invert(15%) sepia(95%) saturate(7000%) hue-rotate(0deg) brightness(105%) contrast(115%); }
+  .soundcloud    .icon { filter: invert(45%) sepia(98%) saturate(1200%) hue-rotate(1deg) brightness(103%) contrast(104%); }
+  .bandcamp      .icon { filter: invert(50%) sepia(60%) saturate(500%) hue-rotate(160deg) brightness(95%) contrast(90%); }
+  .tidal         .icon { filter: brightness(0) invert(1); }
+  .deezer        .icon { filter: invert(40%) sepia(80%) saturate(600%) hue-rotate(240deg) brightness(105%) contrast(100%); }
+  .qobuz         .icon { filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(160deg) brightness(105%) contrast(100%); }
 
   @media (max-width: 600px) {
     .release { flex-direction: column; }
