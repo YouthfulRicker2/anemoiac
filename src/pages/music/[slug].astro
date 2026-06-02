@@ -1,25 +1,26 @@
 ---
 import Layout from "../../components/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const releases = await getCollection("releases");
 
   return releases.map((release) => ({
-    params: { slug: release.slug },
+    params: { slug: release.id },
     props: { release }
   }));
 }
 
 const { release } = Astro.props;
+const { Content } = await render(release);
 ---
 
 <Layout>
   <h1>{release.data.title}</h1>
 
-  <img src={release.data.cover} alt={release.data.title} />
+  {release.data.cover && <img src={release.data.cover} alt={release.data.title} />}
 
-  <div set:html={release.body} />
+  <Content />
 
   {release.data.spotify && (
     <a href={release.data.spotify}>Spotify</a>
