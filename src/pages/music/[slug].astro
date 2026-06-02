@@ -131,8 +131,10 @@ const { Content } = await render(release);
     height: 24px;
     flex-shrink: 0;
   }
-  .spotify { background: #1DB954; color: black; }
-  .soundcloud { background: #ff5500; color: white; }
+  .spotify { background: #0f0f0f; color: #1DB954; border: 1px solid #1DB954; }
+  .spotify .icon { filter: invert(58%) sepia(69%) saturate(456%) hue-rotate(95deg) brightness(96%) contrast(88%); }
+  .soundcloud { background: #0f0f0f; color: #ff5500; border: 1px solid #ff5500; }
+  .soundcloud .icon { filter: invert(45%) sepia(98%) saturate(1200%) hue-rotate(1deg) brightness(103%) contrast(104%); }
 
   @media (max-width: 600px) {
     .release { flex-direction: column; }
