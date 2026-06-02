@@ -11,7 +11,7 @@ const releases = await getCollection("releases");
 		<ReleaseCard
 			title={release.data.title}
 			cover={release.data.cover}
-			url={`/music/${release.slug}`}
+			url={`/music/${release.id}`}
 		/>
 	))}
 </Layout>
