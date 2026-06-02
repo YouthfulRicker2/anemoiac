@@ -4,18 +4,24 @@ import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>anemoiac</title>
-	</head>
-	
-	<body>
-		<Navbar />
-		
-		<main>
-			<slot />
-		</main>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
 
-	</body>
+  <body class="site">
+    <header class="nav">
+      <a href="/">anemoiac</a>
+      <nav>
+        <a href="/music">Music</a>
+        <a href="/shows">Shows</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <slot />
+    </main>
+  </body>
 </html>

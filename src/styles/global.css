@@ -1,15 +1,44 @@
 body {
-	font-family: system-ui, sans-serif;
-	margin: 0;
-	background: #0b0b0b;
-	color: white;
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+  font-family: system-ui, sans-serif;
 }
-nav {
-	display: flex;
-	gap: 1rem;
-	padding: 1rem;
+
+.site {
+  min-height: 100vh;
 }
-.card {
-	display: block;
-	margin: 1rem 0;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  opacity: 0.7;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 64px;
+  letter-spacing: -2px;
+}
+
+p {
+  opacity: 0.8;
+  font-size: 18px;
 }
