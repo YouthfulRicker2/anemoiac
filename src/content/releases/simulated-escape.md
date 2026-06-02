@@ -1,7 +1,7 @@
 ---
 title: "Simulated Escape"
 date: "2026-04-18"
-cover: "/public/covers/simulated-escape.png"
+cover: "/covers/simulated-escape.png"
 spotify: "https://open.spotify.com/track/6M5kwWEs9yHtc5fBVf7WnK"
 soundcloud: "https://soundcloud.com/anemoiac/simulated-escape"
 ---
