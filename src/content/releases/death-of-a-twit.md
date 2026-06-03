@@ -1,6 +1,6 @@
 ---
 title: "Death of a Twit"
-date: "2025.08.18"
+date: "2025-08-18"
 cover: "/covers/death-of-a-twit.png"
 bandcamp: "https://anemoiac.bandcamp.com/track/death-of-a-twit"
 spotify: "https://open.spotify.com/track/5eQ8SpZfALdE2h3VbCcoVA"
