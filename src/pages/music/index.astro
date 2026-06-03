@@ -2,18 +2,20 @@
 import Layout from "../../components/Layout.astro";
 import { getCollection } from "astro:content";
 import ReleaseCard from "../../components/ReleaseCard.astro";
+
 const releases = await getCollection("releases");
+const sorted = releases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 <Layout>
   <h1>Music</h1>
   <div class="grid">
-    {releases.map((release) => (
-      <ReleaseCard
-        title={release.data.title}
-        cover={release.data.cover}
-        url={`/music/${release.id}`}
-      />
-    ))}
+    {sorted.map((release) => (
+	  <ReleaseCard
+		title={release.data.title}
+		cover={release.data.cover}
+		url={`/music/${release.id}`}
+	  />
+	))}
   </div>
 </Layout>
 
