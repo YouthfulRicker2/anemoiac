@@ -35,7 +35,16 @@ const { Content } = await render(release);
 			</a>
 		  )}
 		  {release.data.spotify && (
-		    <iframe data-testid="embed-iframe" style="border-radius:12px" src="{release.data.spotify}?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+			  <iframe
+				style="border-radius:12px"
+				src={`https://open.spotify.com/embed/track/${release.data.spotify.split('/track/')[1]?.split('?')[0]}`}
+				width="100%"
+				height="152"
+				frameborder="0"
+				allowfullscreen
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			  />
 		  )}
 		  {release.data["apple-music"] && (
 			<a href={release.data["apple-music"]} class="btn apple-music" target="_blank">
