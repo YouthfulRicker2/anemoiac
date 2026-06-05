@@ -16,4 +16,4 @@ anghami: "https://play.anghami.com/song/1272838607"
 ---
 Made as a part of the 2025 Vista Foundation 48Hour Film Festival for the film 'One for The Money' by OH!SHOOT. An ethereal hellscape is formed around your hearing holes in this which was formed to indeed signify, the death of a twit.
 
-See the film here: (youtu.be/DV0aHgIZGz8)[youtu.be/DV0aHgIZGz8]
+See the film here: [48 Hours NZ Screening Room - One for the Money](https://www.48hours.co.nz/screening-room/2025/wellington/one-for-the-money/)
