@@ -8,6 +8,7 @@ const releases = defineCollection({
     date: z.string(),
     cover: z.string().optional(),
     bandcamp: z.string().optional(),
+    "bandcamp-id": z.string().optional(),
     spotify: z.string().optional(),
     "apple-music": z.string().optional(),
     "youtube-music": z.string().optional(),

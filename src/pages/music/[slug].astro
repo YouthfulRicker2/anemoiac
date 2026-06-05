@@ -28,23 +28,18 @@ const { Content } = await render(release);
       <p class="date">{release.data.date}</p>
       <div class="description"><Content /></div>
       <div class="links">
-		  {release.data.bandcamp && (
-			<a href={release.data.bandcamp} class="btn bandcamp" target="_blank">
-			  <img src="/icons/bandcamp.svg" alt="Bandcamp" class="icon" />
-			  <span>Listen on Bandcamp (Directly Supports Me)</span>
-			</a>
-		  )}
+		  {release.data["bandcamp-id"] && (
+              <iframe
+                style="border: 0; width: 100%; height: 120px;"
+                src={`https://bandcamp.com/EmbeddedPlayer/track=${release.data["bandcamp-id"]}/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/`}
+                seamless
+              />
+            )}
 		  {release.data.spotify && (
-			  <iframe
-				style="border-radius:12px"
-				src={`https://open.spotify.com/embed/track/${release.data.spotify.split('/track/')[1]?.split('?')[0]}`}
-				width="100%"
-				height="152"
-				frameborder="0"
-				allowfullscreen
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			  />
+			  <a href={release.data.spotify} class="btn spotify" target="_blank">
+    			  <img src="/icons/spotify.svg" alt="Spotify" class="icon" />
+    			  <span>Listen on Spotify</span>
+			  </a>
 		  )}
 		  {release.data["apple-music"] && (
 			<a href={release.data["apple-music"]} class="btn apple-music" target="_blank">
