@@ -35,6 +35,12 @@ const { Content } = await render(release);
                 seamless
               />
             )}
+          {release.data.bandcamp && (
+			<a href={release.data.bandcamp} class="btn bandcamp" target="_blank">
+			  <img src="/icons/bandcamp.svg" alt="Bandcamp" class="icon" />
+			  <span>Listen on Bandcamp (Directly Supports Me)</span>
+			</a>
+		  )}
 		  {release.data.spotify && (
 			  <a href={release.data.spotify} class="btn spotify" target="_blank">
     			  <img src="/icons/spotify.svg" alt="Spotify" class="icon" />
